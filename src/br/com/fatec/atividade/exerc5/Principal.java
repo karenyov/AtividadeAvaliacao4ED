@@ -1,5 +1,7 @@
 package br.com.fatec.atividade.exerc5;
 
+import br.com.fatec.atividade.Lista;
+
 /**
  * @author Karen 19 de mar de 2018
  */

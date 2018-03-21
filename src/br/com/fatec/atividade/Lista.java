@@ -5,11 +5,6 @@ package br.com.fatec.atividade;
  */
 public class Lista {
 	No inicio;
-	
-	public void split(int nro) {
-		
-		
-	}
 
 	public void add(int nro) {
 
@@ -28,7 +23,7 @@ public class Lista {
 					if (nro < inicio.conteudo) {
 						inicio = no;
 					}
-					return;
+					break;
 				}
 				current = current.proximo;
 			} while (current != inicio);
@@ -60,22 +55,40 @@ public class Lista {
 	}
 
 	public No remove() {
-		if (inicio != null) {
-
-			No n = inicio.proximo;
-            n.proximo = n.proximo;
-            if (n == inicio) { // removal of head
-            	inicio = n;
-            }
-			 
-			
-			return inicio;
+		if (inicio == null)
+			return null;
+		
+		No temp = inicio;
+		No temp2 = inicio;
+		
+		if (temp.proximo == inicio) {
+			inicio = null;
+			return temp;
 		}
-		return null;
+		
+		while (temp.proximo != inicio) {
+			temp = temp.proximo;
+		}
+		temp.proximo = inicio.proximo;
+		inicio = temp.proximo;
 
+		return temp2;
+	}
+	
+	public Lista split(int nro) {
+	
+		return new Lista();
 	}
 
-	public void interrupt() {
+	public void interrupt(int nro) {
+		if (inicio != null) {
+			No no = inicio;
 
+			while (no.conteudo != nro) {
+				no = no.proximo;
+			}
+			no.proximo = inicio;
+			inicio = no.proximo;
+		}
 	}
 }
