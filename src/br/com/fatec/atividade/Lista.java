@@ -54,6 +54,10 @@ public class Lista {
 		}
 	}
 
+	/**
+	 * Remove o primeiro elemento da lista circular
+	 * @return
+	 */
 	public No remove() {
 		if (inicio == null)
 			return null;
@@ -80,6 +84,10 @@ public class Lista {
 		return new Lista();
 	}
 
+	/**
+	 * Interrompe a lista no elemento que foi passado como parâmetro
+	 * @param nro
+	 */
 	public void interrupt(int nro) {
 		if (inicio != null) {
 			No no = inicio;
