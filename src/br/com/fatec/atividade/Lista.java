@@ -97,15 +97,17 @@ public class Lista {
 	public Lista split(int nro) {
 
 		Lista lista = new Lista();
-		No ultimo = inicio;
+		
+		if (inicio != null) {
+			No no = inicio;
 
-		if (inicio == null)
-			return lista;
-
-		do {
-			lista.add(ultimo.conteudo);
-			ultimo = ultimo.proximo;
-		} while (ultimo != inicio);
+			while (no.conteudo != nro) {
+				lista.add(no.conteudo);
+				no = no.proximo;
+			}
+			no.proximo = inicio;
+			inicio = no.proximo;
+		}
 
 		return lista;
 	}

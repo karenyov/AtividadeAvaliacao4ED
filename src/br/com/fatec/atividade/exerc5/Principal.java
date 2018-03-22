@@ -27,8 +27,9 @@ public class Principal {
 		a.add(3);
 		a.add(8);
 		a.add(1);
+		System.out.print("\nLista: ");
 		a.print();
-		b = a.split(4);
+		b = a.split(4);		
 		a.print();
 		b.print();
 	}
